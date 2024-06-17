@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useRef } from 'react';
 import "./index.css";
 import { useArticles } from '../../context/ArticleContext';
 import { useNavigate } from 'react-router-dom';
