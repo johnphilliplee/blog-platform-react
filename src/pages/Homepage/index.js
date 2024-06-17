@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useArticles } from "../../context/ArticleContext";
 
 function Homepage() {
-    const { articles, addArticle } = useArticles();
+    const { articles } = useArticles();
     
     return (
         <div>
