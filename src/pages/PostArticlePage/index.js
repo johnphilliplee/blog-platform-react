@@ -1,9 +1,13 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import "./index.css";
+import { useArticles } from '../../context/ArticleContext';
+import { useNavigate } from 'react-router-dom';
 
 function PostArticlePage() {
     const titleRef = useRef();
     const contentRef = useRef();
+    const { addArticle } = useArticles();
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -12,8 +16,10 @@ function PostArticlePage() {
             content: contentRef.current.value
         };
 
+        addArticle(article)
         console.log(article);
         e.target.reset();
+        navigate('/')
     };
 
     return (
